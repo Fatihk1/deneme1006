@@ -6,7 +6,7 @@ import { supabase } from '../lib/supabaseClient';
 
 const PpeSection = ({ companyId, company }) => {
   const { ppeDeliveries, fetchPpeDeliveries, loading } = usePpeDeliveries(companyId);
-  const { employees, fetchEmployees } = useEmployees(companyId);
+  const { employees } = useEmployees(companyId);
   const [showPpeModal, setShowPpeModal] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState(null);
 
@@ -93,3 +93,4 @@ const PpeSection = ({ companyId, company }) => {
 };
 
 export default PpeSection;
+
