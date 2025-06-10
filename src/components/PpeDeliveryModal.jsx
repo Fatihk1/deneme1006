@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabaseClient';
 
 const PPE_OPTIONS = [
   'Baret',
@@ -28,7 +27,6 @@ const PpeDeliveryModal = ({ open, onClose, onAdd, delivery, employees, company, 
   const [changed, setChanged] = useState(false);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const [ppeList, setPpeList] = useState([]);
-  const [ppeInput, setPpeInput] = useState('');
   const [ppeType, setPpeType] = useState('');
   const [ppeOther, setPpeOther] = useState('');
   const [deliveredByType, setDeliveredByType] = useState('select');
@@ -58,7 +56,6 @@ const PpeDeliveryModal = ({ open, onClose, onAdd, delivery, employees, company, 
       setEdit(true);
       setChanged(false);
     }
-    setPpeInput('');
     setPpeType('');
     setPpeOther('');
   }, [delivery, open, company]);
@@ -344,3 +341,4 @@ const getEmployerName = (company) => {
 };
 
 export default PpeDeliveryModal; 
+

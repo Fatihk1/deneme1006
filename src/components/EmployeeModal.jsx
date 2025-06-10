@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabaseClient';
 
 const UNVAN_LIST = [
   'Çalışan', 'Yönetici', 'Müdür', 'Ekip Sorumlusu', 'Usta', 'Kalfa', 'Çırak', 'Diğer'

@@ -86,11 +86,6 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
     fetchEmployees();
   };
 
-  const handleDeleteEmployee = async employee => {
-    if (!employee?.id) return;
-    await supabase.from('employees').delete().eq('id', employee.id);
-    fetchEmployees();
-  };
 
   if (loading) return <div className="text-gray-500">Yükleniyor...</div>;
 
@@ -150,3 +145,4 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
 };
 
 export default EmployeeSection;
+
