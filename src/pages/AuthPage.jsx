@@ -174,15 +174,12 @@ const AuthPage = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bg2})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
+      <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md backdrop-blur-lg">
         {error && (
           <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
             {error}
@@ -216,7 +213,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -306,7 +302,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -327,7 +322,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword2(true)}
                   onMouseUp={() => setShowPassword2(false)}
                   onMouseLeave={() => setShowPassword2(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
