@@ -187,7 +187,7 @@ const AuthPage = () => {
         )}
         {!showRegister ? (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Giriş Yap</h2>
+            <h2 className="text-2xl xs:text-3xl font-bold text-center mb-6">Giriş Yap</h2>
             <form className="space-y-4" onSubmit={handleLogin}>
               <input
                 type="email"
@@ -245,7 +245,7 @@ const AuthPage = () => {
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Kayıt Ol</h2>
+            <h2 className="text-2xl xs:text-3xl font-bold text-center mb-6">Kayıt Ol</h2>
             <form className="space-y-4" onSubmit={handleRegister} autoComplete="off">
               <div>
                 <label className="block text-gray-700 text-sm font-semibold mb-1">Kullanıcı Tipi</label>

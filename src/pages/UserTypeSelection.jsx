@@ -20,10 +20,10 @@ const UserTypeSelection = () => {
         <div
           className="rounded-2xl bg-white/30 backdrop-blur-md p-6 mb-0 flex flex-col items-center w-[80vw] max-w-[600px]"
         >
-          <h1 className="text-3xl font-extrabold text-center mb-4 text-gray-800 tracking-tight">
+          <h1 className="text-3xl xs:text-4xl md:text-5xl font-extrabold text-center mb-4 text-gray-800 tracking-tight">
             ISG Sende'ye Hoş Geldiniz
           </h1>
-          <p className="text-gray-700 text-center text-lg">
+          <p className="text-gray-700 text-center text-lg xs:text-xl">
             Lütfen kullanıcı tipinizi seçin
           </p>
         </div>
@@ -31,14 +31,14 @@ const UserTypeSelection = () => {
         <div className="space-y-4 flex flex-col items-center w-full">
           <button
             onClick={() => handleUserTypeSelect('employer')}
-            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-xl flex items-center justify-center transition-all duration-300 w-[60vw] max-w-[400px]"
+            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg xs:text-xl flex items-center justify-center transition-all duration-300 w-[60vw] max-w-[400px]"
           >
             <span className="mr-2">👨‍💼</span>
             İşveren veya İşveren Vekili
           </button>
           <button
             onClick={() => handleUserTypeSelect('expert')}
-            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-xl flex items-center justify-center transition-all duration-300 w-[60vw] max-w-[400px]"
+            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg xs:text-xl flex items-center justify-center transition-all duration-300 w-[60vw] max-w-[400px]"
           >
             <span className="mr-2">👨‍🔬</span>
             ISG Uzmanı

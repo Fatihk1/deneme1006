@@ -58,24 +58,24 @@ const Dashboard = () => {
           {cardData.map((card, idx) => (
             <div key={idx} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform cursor-pointer">
               <div className="text-4xl mb-3">{card.icon}</div>
-              <h2 className="text-xl font-semibold mb-2 text-gray-800">{card.title}</h2>
-              <p className="text-gray-500 text-center mb-4">{card.description}</p>
-              <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">İncele</button>
+              <h2 className="text-xl xs:text-2xl font-semibold mb-2 text-gray-800">{card.title}</h2>
+              <p className="text-gray-500 text-center mb-4 text-sm xs:text-base">{card.description}</p>
+              <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-sm xs:text-base">İncele</button>
             </div>
           ))}
           {/* Firmalarım */}
           <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform cursor-pointer" onClick={() => navigate('/my-companies')}>
             <div className="text-4xl mb-3">🏢</div>
-            <h2 className="text-xl font-semibold mb-2 text-gray-800">Firmalarım</h2>
-            <p className="text-gray-500 text-center mb-4">Eklediğiniz tüm firmaları görüntüleyin.</p>
-            <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">Görüntüle</button>
+            <h2 className="text-xl xs:text-2xl font-semibold mb-2 text-gray-800">Firmalarım</h2>
+            <p className="text-gray-500 text-center mb-4 text-sm xs:text-base">Eklediğiniz tüm firmaları görüntüleyin.</p>
+            <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-sm xs:text-base">Görüntüle</button>
           </div>
           {/* AI Raportör */}
           <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform cursor-pointer text-white border-2 border-indigo-400" onClick={() => navigate('/ai-reporter')}>
             <div className="text-5xl mb-3 animate-pulse">🤖</div>
-            <h2 className="text-2xl font-bold mb-2">AI Raportör</h2>
-            <p className="text-indigo-100 text-center mb-4">Yapay zeka destekli otomatik rapor oluşturucu ile tanışın.</p>
-            <button className="mt-auto px-4 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-indigo-100 transition">Başlat</button>
+            <h2 className="text-2xl xs:text-3xl font-bold mb-2">AI Raportör</h2>
+            <p className="text-indigo-100 text-center mb-4 text-sm xs:text-base">Yapay zeka destekli otomatik rapor oluşturucu ile tanışın.</p>
+            <button className="mt-auto px-4 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-indigo-100 transition text-sm xs:text-base">Başlat</button>
           </div>
         </div>
       </div>

@@ -124,7 +124,7 @@ const AddCompany = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-green-100 p-6">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg space-y-4">
-        <h2 className="text-2xl font-bold mb-4 text-center">Yeni Firma Ekle</h2>
+        <h2 className="text-2xl xs:text-3xl font-bold mb-4 text-center">Yeni Firma Ekle</h2>
         {error && <div className="bg-red-100 border border-red-400 text-red-700 p-2 rounded mb-2">{error}</div>}
         <input name="company_name" value={form.company_name} onChange={handleChange} required placeholder="Firma Adı" className="w-full px-4 py-2 border rounded-lg" />
         {/* Vergi Dairesi autocomplete/select */}
@@ -183,15 +183,15 @@ const AddCompany = () => {
         {/* Çalışma saatleri */}
         <div className="flex gap-2">
           <div className="w-1/2">
-            <label className="block text-xs text-gray-500 mb-1">Başlangıç Saati</label>
+            <label className="block text-xs xs:text-sm text-gray-500 mb-1">Başlangıç Saati</label>
             <input type="time" name="working_start" value={form.working_start} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg" />
           </div>
           <div className="w-1/2">
-            <label className="block text-xs text-gray-500 mb-1">Bitiş Saati</label>
+            <label className="block text-xs xs:text-sm text-gray-500 mb-1">Bitiş Saati</label>
             <input type="time" name="working_end" value={form.working_end} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg" />
           </div>
         </div>
-        <button type="submit" disabled={loading} className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition">
+        <button type="submit" disabled={loading} className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition text-base xs:text-lg">
           {loading ? 'Kaydediliyor...' : 'Kaydet'}
         </button>
       </form>

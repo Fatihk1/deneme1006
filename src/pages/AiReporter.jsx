@@ -46,7 +46,7 @@ const AiReporter = () => {
     >
       <div className="w-full bg-white bg-opacity-90 rounded-none shadow-none p-2 flex flex-col items-center">
         <div className="text-5xl mb-4 animate-pulse">🤖</div>
-        <h1 className="text-2xl font-bold mb-6 text-gray-800">AI Raportör</h1>
+        <h1 className="text-2xl xs:text-3xl font-bold mb-6 text-gray-800">AI Raportör</h1>
         <div className="w-full mb-6 px-2">
           <label className="block text-gray-700 font-semibold mb-2 text-left">Firma Seçiniz</label>
           {loading ? (
@@ -64,7 +64,7 @@ const AiReporter = () => {
             </select>
           )}
         </div>
-        <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition text-lg">Rapor Oluştur</button>
+        <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition text-base xs:text-lg">Rapor Oluştur</button>
         {selectedCompany && (
           <div className="mt-6 w-full text-left text-sm text-gray-700 px-2">
             <div><b>Seçili Firma:</b> {selectedCompany.company_name}</div>
