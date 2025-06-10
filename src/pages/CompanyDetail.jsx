@@ -6,7 +6,21 @@ import MachineModal from '../components/MachineModal';
 import ChemicalModal from '../components/ChemicalModal';
 import PpeDeliveryModal from '../components/PpeDeliveryModal';
 import FireEquipmentModal from '../components/FireEquipmentModal';
-import { addYears, getDaysLeft, addMonths, getFireEquipmentDaysLeft } from '../utils';
+import {
+  addYears,
+  getDaysLeft,
+  addMonths,
+  getFireEquipmentDaysLeft,
+} from '../utils';
+import { UNVAN_LIST } from '../constants/titles';
+import { POZISYON_LIST } from '../constants/positions';
+import { CINSIYET_LIST } from '../constants/genders';
+import { CALISMA_SEKLI_LIST } from '../constants/workTypes';
+import { MAKINE_LIST } from '../constants/machineNames';
+import { CHEMICAL_TYPE_OPTIONS } from '../constants/chemicalTypes';
+import { CHEMICAL_NAME_OPTIONS } from '../constants/chemicalNames';
+import { PPE_OPTIONS } from '../constants/ppeOptions';
+import { FIRE_EQUIPMENT_OPTIONS } from '../constants/fireEquipmentOptions';
 import useEmployees from '../hooks/useEmployees';
 import useMachines from '../hooks/useMachines';
 import useChemicals from '../hooks/useChemicals';
@@ -33,71 +47,6 @@ const tableMap = {
   assignments: 'assignments',
 };
 
-const UNVAN_LIST = [
-  'Çalışan', 'Yönetici', 'Müdür', 'Ekip Sorumlusu', 'Usta', 'Kalfa', 'Çırak', 'Diğer'
-];
-const POZISYON_LIST = [
-  'Muhasebe', 'Satış Temsilcisi', 'Saha Çalışanı', 'Diğer'
-];
-const CINSIYET_LIST = ['Kadın', 'Erkek'];
-const CALISMA_SEKLI_LIST = ['Tam Zamanlı', 'Yarı Zamanlı', 'Teşeron', 'Stajyer'];
-
-// Makine isimleri listesi
-const MAKINE_LIST = [
-  'Dikiş Makinesi',
-  'Overlok Makinesi',
-  'Buharlı Ütü',
-  'Diğer'
-];
-
-const CHEMICAL_TYPE_OPTIONS = [
-  'Temizlik kimyasalları',
-  'Üretim kimyasalları',
-  'Tarım kimyasalları',
-  'Gıda katkı kimyasalları',
-  'Laboratuvar kimyasalları',
-  'Diğer'
-];
-const CHEMICAL_NAME_OPTIONS = [
-  'Çamaşır suyu',
-  'Tuz ruhu',
-  'Deterjanlar',
-  'Boya',
-  'Tiner',
-  'Reçine',
-  'Solvent',
-  'Pestisit',
-  'Herbisit',
-  'Gübre',
-  'Asitlik düzenleyici',
-  'Koruyucu',
-  'Asitler',
-  'Bazlar',
-  'Indikatörler',
-  'Diğer'
-];
-
-const PPE_OPTIONS = [
-  'Baret',
-  'Koruyucu gözlük',
-  'Kulak tıkacı',
-  'Toz maskesi (FFP2)',
-  'Nitril eldiven',
-  'İş elbisesi',
-  'Reflektif yelek',
-  'Çelik burunlu iş ayakkabısı',
-  'Emniyet kemeri',
-  'Kaynakçı önlüğü',
-  'Diğer'
-];
-
-const FIRE_EQUIPMENT_OPTIONS = [
-  'Yangın Tüpü',
-  'Yangın Dolabı',
-  'İlk Yardım Dolabı',
-  'İlkyardım Çantası',
-  'Diğer'
-];
 
 const EmployeeDetailModal = ({ open, onClose, employee, dangerClass, onUpdate, assignments = [], ppeDeliveries = [] }) => {
   const [edit, setEdit] = useState(false);

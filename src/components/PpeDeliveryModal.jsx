@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
-
-const PPE_OPTIONS = [
-  'Baret',
-  'Koruyucu gözlük',
-  'Kulak tıkacı',
-  'Toz maskesi (FFP2)',
-  'Nitril eldiven',
-  'İş elbisesi',
-  'Reflektif yelek',
-  'Çelik burunlu iş ayakkabısı',
-  'Emniyet kemeri',
-  'Kaynakçı önlüğü',
-  'Diğer'
-];
+import { PPE_OPTIONS } from '../constants/ppeOptions';
 
 const PpeDeliveryModal = ({ open, onClose, onAdd, delivery, employees, company, onDelete, onUpdate }) => {
   const [form, setForm] = useState({

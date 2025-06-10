@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
-
-const UNVAN_LIST = [
-  'Çalışan', 'Yönetici', 'Müdür', 'Ekip Sorumlusu', 'Usta', 'Kalfa', 'Çırak', 'Diğer'
-];
-const POZISYON_LIST = [
-  'Muhasebe', 'Satış Temsilcisi', 'Saha Çalışanı', 'Diğer'
-];
-const CINSIYET_LIST = ['Kadın', 'Erkek'];
-const CALISMA_SEKLI_LIST = ['Tam Zamanlı', 'Yarı Zamanlı', 'Teşeron', 'Stajyer'];
+import { UNVAN_LIST } from '../constants/titles';
+import { POZISYON_LIST } from '../constants/positions';
+import { CINSIYET_LIST } from '../constants/genders';
+import { CALISMA_SEKLI_LIST } from '../constants/workTypes';
 
 function addYears(date, years) {
   const d = new Date(date);

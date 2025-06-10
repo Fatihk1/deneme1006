@@ -1,32 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
-
-const CHEMICAL_TYPE_OPTIONS = [
-  'Temizlik kimyasalları',
-  'Üretim kimyasalları',
-  'Tarım kimyasalları',
-  'Gıda katkı kimyasalları',
-  'Laboratuvar kimyasalları',
-  'Diğer'
-];
-const CHEMICAL_NAME_OPTIONS = [
-  'Çamaşır suyu',
-  'Tuz ruhu',
-  'Deterjanlar',
-  'Boya',
-  'Tiner',
-  'Reçine',
-  'Solvent',
-  'Pestisit',
-  'Herbisit',
-  'Gübre',
-  'Asitlik düzenleyici',
-  'Koruyucu',
-  'Asitler',
-  'Bazlar',
-  'Indikatörler',
-  'Diğer'
-];
+import { CHEMICAL_TYPE_OPTIONS } from '../constants/chemicalTypes';
+import { CHEMICAL_NAME_OPTIONS } from '../constants/chemicalNames';
 
 const ChemicalModal = ({ open, onClose, onAdd, chemical, onDelete, onUpdate }) => {
   const [form, setForm] = useState({

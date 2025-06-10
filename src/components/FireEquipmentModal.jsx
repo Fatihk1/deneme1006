@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-const FIRE_EQUIPMENT_OPTIONS = [
-  'Yangın Tüpü',
-  'Yangın Dolabı',
-  'İlk Yardım Dolabı',
-  'İlkyardım Çantası',
-  'Diğer'
-];
+import { FIRE_EQUIPMENT_OPTIONS } from '../constants/fireEquipmentOptions';
 
 const FireEquipmentModal = ({ open, onClose, onAdd, equipment, onDelete }) => {
   const [form, setForm] = useState({

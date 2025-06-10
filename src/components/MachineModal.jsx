@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
-
-const MAKINE_LIST = [
-  'Dikiş Makinesi',
-  'Overlok Makinesi',
-  'Buharlı Ütü',
-  'Diğer'
-];
+import { MAKINE_LIST } from '../constants/machineNames';
 
 const MachineModal = ({ open, onClose, onAdd, machine, onDelete, onUpdate }) => {
   const [form, setForm] = useState({
