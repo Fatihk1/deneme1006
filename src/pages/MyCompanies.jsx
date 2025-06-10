@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import CompanyCard from '../components/CompanyCard';
 
 const MyCompanies = () => {
   const [companies, setCompanies] = useState([]);
@@ -40,14 +41,13 @@ const MyCompanies = () => {
         ) : companies.length === 0 ? (
           <div className="text-gray-500">Henüz bir firma eklemediniz.</div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {companies.map((company) => (
-              <div key={company.id} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 hover:scale-105 transition-transform cursor-pointer" onClick={() => navigate(`/company/${company.id}`)}>
-                <div className="text-xl font-bold text-gray-800 mb-1">{company.company_name}</div>
-                <div className="text-gray-400 text-sm">Firma Kodu: {company.company_code}</div>
-                <div className="text-gray-500 text-sm">Çalışan Sayısı: {company.employee_count ?? 0}</div>
-                <div className="text-gray-400 text-xs mt-2">{company.city} / {company.district}</div>
-              </div>
+              <CompanyCard
+                key={company.id}
+                company={company}
+                onClick={() => navigate(`/company/${company.id}`)}
+              />
             ))}
           </div>
         )}
