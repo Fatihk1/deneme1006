@@ -3,10 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 import bg2 from '../assets/backgrounds/bg2.jpg';
 
-const userTypeLabels = {
-  employer: 'İşveren veya İşveren Vekili',
-  expert: 'ISG Uzmanı',
-};
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -135,7 +131,7 @@ const AuthPage = () => {
       setLoading(true);
       setError(null);
 
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
@@ -359,4 +355,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+

@@ -23,9 +23,7 @@ const AddCompany = () => {
   const [form, setForm] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [selectedCity, setSelectedCity] = useState('');
   const [filteredDistricts, setFilteredDistricts] = useState([]);
-  const [taxOfficeOptions, setTaxOfficeOptions] = useState([]);
   const [taxOfficeInput, setTaxOfficeInput] = useState('');
   const [showTaxOfficeList, setShowTaxOfficeList] = useState(false);
   const navigate = useNavigate();
@@ -40,7 +38,6 @@ const AddCompany = () => {
   const handleCityChange = (e) => {
     const cityId = e.target.value;
     setForm({ ...form, city: cityId, district: '' });
-    setSelectedCity(cityId);
     const cityDistricts = ilceler.filter((ilce) => ilce.il_id === cityId);
     setFilteredDistricts(cityDistricts);
   };

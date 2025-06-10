@@ -15,9 +15,6 @@ const AssignmentModal = ({
     assignment_letter: '', // var/yok
     certificate: '', // var/yok
   });
-  const [newRows, setNewRows] = useState([
-    { employee_id: '', assignment_form: 'Var', first_aid_certificate: 'Var' }
-  ]);
   const [editingId, setEditingId] = useState(null);
   const [editValues, setEditValues] = useState({ assignment_form: '', first_aid_certificate: '' });
 
@@ -189,4 +186,4 @@ const AssignmentModal = ({
   );
 };
 
-export default AssignmentModal; 
+
