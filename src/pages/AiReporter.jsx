@@ -38,7 +38,7 @@ const AiReporter = () => {
 
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center bg-fixed bg-contain bg-center bg-no-repeat"
+      className="min-h-screen w-full flex items-center justify-center bg-fixed bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: 'url(/src/assets/backgrounds/bg1.jpg)',
         backgroundColor: '#fff',
