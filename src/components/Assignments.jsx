@@ -3,7 +3,7 @@ import useAssignments from '../hooks/useAssignments';
 import AssignmentCard from './AssignmentCard';
 
 const Assignments = ({ companyId }) => {
-  const { assignments, employeeList, addAssignment, removeAssignment, loading, error } = useAssignments(companyId);
+  const { assignments, employeeList, addAssignment, deleteAssignment, loading, error } = useAssignments(companyId);
 
   const getStatusColor = (role) => {
     const required = role === 'acil_durum' || role === 'ilk_yardim' ? 5 : 1;
@@ -24,7 +24,7 @@ const Assignments = ({ companyId }) => {
 
   const handleRemoveAssignment = async (assignmentId) => {
     try {
-      await removeAssignment(assignmentId);
+      await deleteAssignment(assignmentId);
     } catch (error) {
       console.error('Atama silinirken hata oluştu:', error);
     }
