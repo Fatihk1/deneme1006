@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard'
 import AddCompany from './pages/AddCompany'
 import MyCompanies from './pages/MyCompanies'
 import CompanyDetail from './pages/CompanyDetail'
-import './App.css'
+import './styles/App.css'
 
 function App() {
   return (

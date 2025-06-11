@@ -3,11 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 import bg2 from '../assets/backgrounds/bg2.jpg';
 
-const userTypeLabels = {
-  employer: 'İşveren veya İşveren Vekili',
-  expert: 'ISG Uzmanı',
-};
-
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const EyeIcon = ({ className }) => (
@@ -135,7 +130,7 @@ const AuthPage = () => {
       setLoading(true);
       setError(null);
 
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
@@ -174,12 +169,9 @@ const AuthPage = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bg2})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
@@ -211,12 +203,11 @@ const AuthPage = () => {
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -301,12 +292,11 @@ const AuthPage = () => {
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -322,12 +312,11 @@ const AuthPage = () => {
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword2(true)}
                   onMouseUp={() => setShowPassword2(false)}
                   onMouseLeave={() => setShowPassword2(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>

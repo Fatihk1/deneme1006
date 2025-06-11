@@ -72,11 +72,11 @@ const CompanyDetail = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-4 mb-8">
+        <div className="flex gap-4 mb-8 overflow-x-auto whitespace-nowrap">
           {categories.map(cat => (
             <div
               key={cat.key}
-              className={`flex flex-col items-center px-4 py-2 rounded-xl shadow cursor-pointer transition border-2 ${activeTab === cat.key ? 'border-blue-600 bg-white' : 'border-transparent bg-white/70 hover:bg-white'}`}
+              className={`flex flex-col items-center px-4 py-2 rounded-xl shadow cursor-pointer transition border-2 flex-shrink-0 w-32 ${activeTab === cat.key ? 'border-blue-600 bg-white' : 'border-transparent bg-white/70 hover:bg-white'}`}
               onClick={() => setActiveTab(cat.key)}
             >
               <span className="font-semibold text-base">{cat.label}</span>

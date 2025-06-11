@@ -86,11 +86,6 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
     fetchEmployees();
   };
 
-  const handleDeleteEmployee = async employee => {
-    if (!employee?.id) return;
-    await supabase.from('employees').delete().eq('id', employee.id);
-    fetchEmployees();
-  };
 
   if (loading) return <div className="text-gray-500">Yükleniyor...</div>;
 
@@ -99,7 +94,6 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
       <div
         className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-[64px] text-blue-700 font-bold text-lg gap-2"
         onClick={() => setShowEmployeeModal(true)}
-        style={{ minHeight: 64 }}
       >
         <span className="text-2xl mr-2">+</span> Çalışan Ekle
       </div>
