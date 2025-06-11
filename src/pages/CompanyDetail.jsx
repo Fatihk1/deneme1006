@@ -58,17 +58,17 @@ const CompanyDetail = () => {
   if (!company) return <div className="min-h-screen flex items-center justify-center">Yükleniyor...</div>;
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen p-6 bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-          <h1 className="text-2xl font-bold mb-4">{company.name}</h1>
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-6">
+          <h1 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">{company.name}</h1>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="text-gray-600">Tehlike Sınıfı: {company.danger_class}</p>
+              <p className="text-gray-600 dark:text-gray-300">Tehlike Sınıfı: {company.danger_class}</p>
             </div>
             <div>
-              <p className="text-gray-600">Telefon: {company.phone}</p>
-              <p className="text-gray-600">Email: {company.email}</p>
+              <p className="text-gray-600 dark:text-gray-300">Telefon: {company.phone}</p>
+              <p className="text-gray-600 dark:text-gray-300">Email: {company.email}</p>
             </div>
           </div>
         </div>
@@ -76,11 +76,11 @@ const CompanyDetail = () => {
           {categories.map(cat => (
             <div
               key={cat.key}
-              className={`flex flex-col items-center px-4 py-2 rounded-xl shadow cursor-pointer transition border-2 flex-shrink-0 w-32 ${activeTab === cat.key ? 'border-blue-600 bg-white' : 'border-transparent bg-white/70 hover:bg-white'}`}
+              className={`flex flex-col items-center px-4 py-2 rounded-xl shadow cursor-pointer transition border-2 flex-shrink-0 w-32 ${activeTab === cat.key ? 'border-blue-600 bg-white dark:bg-gray-800' : 'border-transparent bg-white/70 dark:bg-gray-700/60 hover:bg-white dark:hover:bg-gray-700'}`}
               onClick={() => setActiveTab(cat.key)}
             >
-              <span className="font-semibold text-base">{cat.label}</span>
-              <span className="text-xs text-gray-400 mt-1">{(counts[cat.key] ?? 0) + ' kayıt'}</span>
+              <span className="font-semibold text-base text-gray-800 dark:text-gray-100">{cat.label}</span>
+              <span className="text-xs text-gray-400 dark:text-gray-300 mt-1">{(counts[cat.key] ?? 0) + ' kayıt'}</span>
             </div>
           ))}
         </div>

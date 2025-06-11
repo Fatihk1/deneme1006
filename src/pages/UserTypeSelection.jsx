@@ -9,17 +9,17 @@ const UserTypeSelection = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-start justify-center">
+    <div className="min-h-screen w-full flex items-start justify-center bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
       <div
         className="flex flex-col items-center w-full mt-[20vh]"
       >
         <div
-          className="rounded-2xl bg-white/30 backdrop-blur-md p-6 mb-0 flex flex-col items-center w-4/5 max-w-[600px]"
+          className="rounded-2xl bg-white/30 dark:bg-gray-800/40 backdrop-blur-md p-6 mb-0 flex flex-col items-center w-4/5 max-w-[600px]"
         >
-          <h1 className="text-2xl md:text-3xl font-extrabold text-center mb-4 text-gray-800 tracking-tight">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-center mb-4 text-gray-800 dark:text-gray-100 tracking-tight">
             ISG Sende'ye Hoş Geldiniz
           </h1>
-          <p className="text-gray-700 text-center text-base md:text-lg">
+          <p className="text-gray-700 dark:text-gray-300 text-center text-base md:text-lg">
             Lütfen kullanıcı tipinizi seçin
           </p>
         </div>
@@ -27,14 +27,14 @@ const UserTypeSelection = () => {
         <div className="space-y-4 flex flex-col items-center w-full">
           <button
             onClick={() => handleUserTypeSelect('employer')}
-            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
+            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white dark:text-gray-900 rounded-2xl border border-gray-400 dark:border-gray-600 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
           >
             <span className="mr-2">👨‍💼</span>
             İşveren veya İşveren Vekili
           </button>
           <button
             onClick={() => handleUserTypeSelect('expert')}
-            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
+            className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white dark:text-gray-900 rounded-2xl border border-gray-400 dark:border-gray-600 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
           >
             <span className="mr-2">👨‍🔬</span>
             ISG Uzmanı

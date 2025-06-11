@@ -44,12 +44,12 @@ const FireSection = ({ companyId }) => {
     fetchFireEquipments();
   };
 
-  if (loading) return <div className="text-gray-500">Yükleniyor...</div>;
+  if (loading) return <div className="text-gray-500 dark:text-gray-400">Yükleniyor...</div>;
 
   return (
     <>
       <div
-        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-orange-400 bg-orange-50 hover:bg-orange-100 transition min-h-[64px] text-orange-700 font-bold text-lg gap-2"
+        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-orange-400 bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/30 transition min-h-[64px] text-orange-700 dark:text-orange-300 font-bold text-lg gap-2"
         onClick={() => setShowFireModal(true)}
       >
         <span className="text-2xl mr-2">+</span> Ekipman Ekle
@@ -58,14 +58,14 @@ const FireSection = ({ companyId }) => {
         {fireEquipments.map(item => {
           const daysLeft = getFireEquipmentDaysLeft(item.last_check_date);
           return (
-            <div key={item.id} className="bg-gray-100 rounded-lg p-4 shadow flex flex-col cursor-pointer group" onClick={() => setSelectedEquipment(item)}>
+            <div key={item.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 shadow flex flex-col cursor-pointer group" onClick={() => setSelectedEquipment(item)}>
               <div className="flex items-center justify-between">
                 <div className="text-lg font-bold">{item.equipment_type}</div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs px-2 py-1 rounded bg-gray-200 text-gray-700">Adet: {item.quantity}</span>
-                  <span className="text-xs px-2 py-1 rounded bg-gray-200 text-gray-700">Son Kontrol: {item.last_check_date}</span>
+                  <span className="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">Adet: {item.quantity}</span>
+                  <span className="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">Son Kontrol: {item.last_check_date}</span>
                   {daysLeft !== null && (
-                    <span className={`text-xs font-semibold px-2 py-1 rounded ${daysLeft < 30 ? 'bg-red-100 text-red-600' : 'bg-gray-200 text-gray-600'}`}>Kalan: {daysLeft} gün</span>
+                    <span className={`text-xs font-semibold px-2 py-1 rounded ${daysLeft < 30 ? 'bg-red-100 text-red-600 dark:bg-red-900/40 dark:text-red-400' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'}`}>Kalan: {daysLeft} gün</span>
                   )}
                 </div>
               </div>
