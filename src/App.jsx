@@ -6,15 +6,12 @@ import Dashboard from './pages/Dashboard'
 import AddCompany from './pages/AddCompany'
 import MyCompanies from './pages/MyCompanies'
 import CompanyDetail from './pages/CompanyDetail'
-import defaultBg from './assets/backgrounds/bg2.jpg'
+import Layout from './components/Layout'
 import './styles/App.css'
 
 function App() {
   return (
-    <div
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${defaultBg})` }}
-    >
+    <Layout>
       <Routes>
         <Route path="/" element={<UserTypeSelection />} />
         <Route path="/auth" element={<AuthPage />} />
@@ -23,7 +20,7 @@ function App() {
         <Route path="/my-companies" element={<MyCompanies />} />
         <Route path="/company/:id" element={<CompanyDetail />} />
       </Routes>
-    </div>
+    </Layout>
   )
 }
 

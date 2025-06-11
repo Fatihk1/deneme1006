@@ -24,7 +24,7 @@ const MyCompanies = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-6">
+    <div className="min-h-screen p-6">
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Firmalarım</h2>

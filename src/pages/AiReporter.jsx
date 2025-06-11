@@ -37,13 +37,7 @@ const AiReporter = () => {
   }, [selectedCompanyId, companies]);
 
   return (
-    <div
-      className="min-h-screen w-screen flex items-center justify-center bg-fixed bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: 'url(/src/assets/backgrounds/bg1.jpg)',
-        backgroundColor: '#fff',
-      }}
-    >
+    <div className="min-h-screen w-screen flex items-center justify-center">
       <div className="w-full bg-white bg-opacity-90 rounded-none shadow-none p-2 flex flex-col items-center">
         <div className="text-5xl mb-4 animate-pulse">🤖</div>
         <h1 className="text-2xl font-bold mb-6 text-gray-800">AI Raportör</h1>

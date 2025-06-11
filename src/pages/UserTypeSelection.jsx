@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import bg1 from '../assets/backgrounds/bg1.jpg';
 
 const UserTypeSelection = () => {
   const navigate = useNavigate();
@@ -10,12 +9,7 @@ const UserTypeSelection = () => {
   };
 
   return (
-    <div
-      className="min-h-screen w-full flex items-start justify-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${bg1})`,
-      }}
-    >
+    <div className="min-h-screen w-full flex items-start justify-center">
       <div
         className="flex flex-col items-center w-full mt-[20vh]"
       >
