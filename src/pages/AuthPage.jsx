@@ -169,7 +169,9 @@ const AuthPage = () => {
 
   return (
     <div
+ 0rk50v-codex/kodları-modüler-hale-getir-ve-responsive-yap
       className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+ main
       style={{
         backgroundImage: `url(${bg2})`,
       }}

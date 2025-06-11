@@ -33,14 +33,18 @@ const UserTypeSelection = () => {
         <div className="space-y-4 flex flex-col items-center w-full">
           <button
             onClick={() => handleUserTypeSelect('employer')}
+ 0rk50v-codex/kodları-modüler-hale-getir-ve-responsive-yap
             className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
+ main
           >
             <span className="mr-2">👨‍💼</span>
             İşveren veya İşveren Vekili
           </button>
           <button
             onClick={() => handleUserTypeSelect('expert')}
+0rk50v-codex/kodları-modüler-hale-getir-ve-responsive-yap
             className="py-4 px-6 bg-gray-500/85 hover:bg-gray-600/90 text-white rounded-2xl border border-gray-400 shadow-md font-bold text-lg md:text-xl flex items-center justify-center transition-all duration-300 w-3/5 max-w-[400px]"
+
           >
             <span className="mr-2">👨‍🔬</span>
             ISG Uzmanı
