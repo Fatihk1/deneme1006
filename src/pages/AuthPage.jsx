@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
-import bg2 from '../assets/backgrounds/bg2.jpg';
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -168,12 +167,7 @@ const AuthPage = () => {
   };
 
   return (
-    <div
-      className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${bg2})`,
-      }}
-    >
+    <div className="min-h-screen w-screen flex items-center justify-center">
       <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
         {error && (
           <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
