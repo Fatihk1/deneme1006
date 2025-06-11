@@ -169,7 +169,7 @@ const AuthPage = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bg2})`,
       }}
