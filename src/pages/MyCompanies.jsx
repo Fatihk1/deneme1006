@@ -40,9 +40,9 @@ const MyCompanies = () => {
         ) : companies.length === 0 ? (
           <div className="text-gray-500">Henüz bir firma eklemediniz.</div>
         ) : (
-          <div className="flex overflow-x-auto gap-6 sm:grid sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {companies.map((company) => (
-              <div key={company.id} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 hover:scale-105 transition-transform cursor-pointer flex-shrink-0 w-64" onClick={() => navigate(`/company/${company.id}`)}>
+              <div key={company.id} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2 hover:scale-105 transition-transform cursor-pointer w-full" onClick={() => navigate(`/company/${company.id}`)}>
                 <div className="text-xl font-bold text-gray-800 mb-1">{company.company_name}</div>
                 <div className="text-gray-400 text-sm">Firma Kodu: {company.company_code}</div>
                 <div className="text-gray-500 text-sm">Çalışan Sayısı: {company.employee_count ?? 0}</div>
