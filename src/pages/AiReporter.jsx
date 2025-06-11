@@ -65,14 +65,14 @@ const AiReporter = () => {
           )}
         </div>
         <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition text-base xs:text-lg">Rapor Oluştur</button>
-        {selectedCompany && (
-          <div className="mt-6 w-full text-left text-sm text-gray-700 px-2">
-            <div><b>Seçili Firma:</b> {selectedCompany.company_name}</div>
-            <div><b>Firma Kodu:</b> {selectedCompany.company_code}</div>
-            <div><b>Çalışan Sayısı:</b> {selectedCompany.employee_count ?? 0}</div>
-            <div><b>Şehir:</b> {selectedCompany.city} / {selectedCompany.district}</div>
-          </div>
-        )}
+          {selectedCompany && (
+            <div className="mt-6 w-full px-2 prose prose-sm text-gray-700">
+              <p><strong>Seçili Firma:</strong> {selectedCompany.company_name}</p>
+              <p><strong>Firma Kodu:</strong> {selectedCompany.company_code}</p>
+              <p><strong>Çalışan Sayısı:</strong> {selectedCompany.employee_count ?? 0}</p>
+              <p><strong>Şehir:</strong> {selectedCompany.city} / {selectedCompany.district}</p>
+            </div>
+          )}
       </div>
     </div>
   );
