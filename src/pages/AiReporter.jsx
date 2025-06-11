@@ -37,17 +37,17 @@ const AiReporter = () => {
   }, [selectedCompanyId, companies]);
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center">
-      <div className="w-full bg-white bg-opacity-90 rounded-none shadow-none p-2 flex flex-col items-center">
+    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="w-full bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-100 rounded-none shadow-none p-2 flex flex-col items-center dark:text-gray-100">
         <div className="text-5xl mb-4 animate-pulse">🤖</div>
-        <h1 className="text-2xl font-bold mb-6 text-gray-800">AI Raportör</h1>
+        <h1 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">AI Raportör</h1>
         <div className="w-full mb-6 px-2">
-          <label className="block text-gray-700 font-semibold mb-2 text-left">Firma Seçiniz</label>
+          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2 text-left">Firma Seçiniz</label>
           {loading ? (
-            <div className="text-gray-500">Firmalar yükleniyor...</div>
+            <div className="text-gray-500 dark:text-gray-400">Firmalar yükleniyor...</div>
           ) : (
             <select
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100"
               value={selectedCompanyId}
               onChange={e => setSelectedCompanyId(e.target.value)}
             >
@@ -58,9 +58,9 @@ const AiReporter = () => {
             </select>
           )}
         </div>
-        <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition text-lg">Rapor Oluştur</button>
+        <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition text-lg dark:text-gray-900">Rapor Oluştur</button>
         {selectedCompany && (
-          <div className="mt-6 w-full text-left text-sm text-gray-700 px-2">
+          <div className="mt-6 w-full text-left text-sm text-gray-700 dark:text-gray-300 px-2">
             <div><b>Seçili Firma:</b> {selectedCompany.company_name}</div>
             <div><b>Firma Kodu:</b> {selectedCompany.company_code}</div>
             <div><b>Çalışan Sayısı:</b> {selectedCompany.employee_count ?? 0}</div>

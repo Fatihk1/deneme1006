@@ -167,23 +167,23 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center">
-      <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
+    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="bg-white/30 dark:bg-gray-800/40 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
         {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+          <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/40 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-400 rounded-lg">
             {error}
           </div>
         )}
         {!showRegister ? (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Giriş Yap</h2>
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Giriş Yap</h2>
             <form className="space-y-4" onSubmit={handleLogin}>
               <input
                 type="email"
                 placeholder="E-posta"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border rounded-lg border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
                 required
               />
               <div className="relative">
@@ -192,12 +192,12 @@ const AuthPage = () => {
                   placeholder="Şifre"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
+                  className="w-full px-4 py-2 border rounded-lg border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
                   required
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
@@ -209,14 +209,14 @@ const AuthPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full py-2 bg-blue-600 hover:bg-blue-700 text-white dark:text-gray-900 rounded-lg font-semibold transition duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {loading ? 'Giriş Yapılıyor...' : 'Giriş Yap'}
               </button>
             </form>
             <div className="mt-6 flex justify-between items-center">
               <button
-                className="text-gray-600 hover:underline font-semibold"
+                className="text-gray-600 dark:text-gray-300 hover:underline font-semibold"
                 onClick={() => navigate('/')}
               >
                 Geri
@@ -224,7 +224,7 @@ const AuthPage = () => {
               <span>
                 Hesabınız yok mu?
                 <button
-                  className="ml-2 text-blue-600 hover:underline font-semibold"
+                  className="ml-2 text-blue-600 dark:text-blue-400 hover:underline font-semibold"
                   onClick={() => setShowRegister(true)}
                 >
                   Kayıt Ol
@@ -234,12 +234,12 @@ const AuthPage = () => {
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Kayıt Ol</h2>
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Kayıt Ol</h2>
             <form className="space-y-4" onSubmit={handleRegister} autoComplete="off">
               <div>
-                <label className="block text-gray-700 text-sm font-semibold mb-1">Kullanıcı Tipi</label>
+                <label className="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-1">Kullanıcı Tipi</label>
                 <select
-                  className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-bold border-gray-300"
+                  className="w-full px-4 py-2 border rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-100 font-bold border-gray-300 dark:border-gray-600"
                   value={userType}
                   onChange={e => setUserType(e.target.value)}
                 >
@@ -253,7 +253,7 @@ const AuthPage = () => {
                 placeholder="Ad Soyad"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                className={`w-full px-4 py-2 border rounded-lg focus:outline-none ${getInputBorder(isNameValid, name, 'name')}`}
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 ${getInputBorder(isNameValid, name, 'name')}`}
               />
               <input
                 ref={emailRef}
@@ -261,10 +261,10 @@ const AuthPage = () => {
                 placeholder="E-posta"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                className={`w-full px-4 py-2 border rounded-lg focus:outline-none ${getInputBorder(isEmailValid, email, 'email')}`}
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 ${getInputBorder(isEmailValid, email, 'email')}`}
               />
               <div className="flex items-center gap-2">
-                <span className="px-3 py-2 bg-gray-200 border border-gray-300 rounded-l-lg select-none">+90</span>
+                <span className="px-3 py-2 bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-l-lg select-none text-gray-800 dark:text-gray-100">+90</span>
                 <input
                   ref={phoneRef}
                   type="text"
@@ -272,7 +272,7 @@ const AuthPage = () => {
                   value={phone}
                   onChange={handlePhoneChange}
                   maxLength={13}
-                  className={`w-full px-4 py-2 border rounded-r-lg focus:outline-none ${getInputBorder(isPhoneValid, phone, 'phone')}`}
+                  className={`w-full px-4 py-2 border rounded-r-lg focus:outline-none bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 ${getInputBorder(isPhoneValid, phone, 'phone')}`}
                 />
               </div>
               <div className="relative">
@@ -282,11 +282,11 @@ const AuthPage = () => {
                   placeholder="Şifre (en az 4 karakter)"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none pr-10 ${getInputBorder(isPasswordValid, password, 'password')}`}
+                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none pr-10 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 ${getInputBorder(isPasswordValid, password, 'password')}`}
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
@@ -302,11 +302,11 @@ const AuthPage = () => {
                   placeholder="Şifre Tekrar"
                   value={password2}
                   onChange={e => setPassword2(e.target.value)}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none pr-10 ${getInputBorder(isPasswordMatch, password2, 'password2')}`}
+                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none pr-10 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 ${getInputBorder(isPasswordMatch, password2, 'password2')}`}
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 p-0 m-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                   tabIndex={-1}
                   onMouseDown={() => setShowPassword2(true)}
                   onMouseUp={() => setShowPassword2(false)}
@@ -317,7 +317,7 @@ const AuthPage = () => {
               </div>
               <button
                 type="submit"
-                className={`w-full py-2 rounded-lg font-semibold transition duration-200 ${isFormValid ? 'bg-green-600 hover:bg-green-700 text-white cursor-pointer' : 'bg-gray-300 text-gray-400 cursor-not-allowed'}`}
+                className={`w-full py-2 rounded-lg font-semibold transition duration-200 ${isFormValid ? 'bg-green-600 hover:bg-green-700 text-white dark:text-gray-900 cursor-pointer' : 'bg-gray-300 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'}`}
                 disabled={!isFormValid}
                 onClick={e => {
                   if (!isFormValid) {
@@ -335,7 +335,7 @@ const AuthPage = () => {
             </form>
             <div className="mt-6 text-center">
               <button
-                className="text-gray-600 hover:underline font-semibold"
+                className="text-gray-600 dark:text-gray-300 hover:underline font-semibold"
                 onClick={() => setShowRegister(false)}
               >
                 Geri Dön
