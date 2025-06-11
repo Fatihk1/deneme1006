@@ -47,7 +47,6 @@ const ChemicalSection = ({ companyId }) => {
       <div
         className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-[64px] text-blue-700 font-bold text-lg gap-2"
         onClick={() => setShowChemicalModal(true)}
-        style={{ minHeight: 64 }}
       >
         <span className="text-2xl mr-2">+</span> Kimyasal Ekle
       </div>
