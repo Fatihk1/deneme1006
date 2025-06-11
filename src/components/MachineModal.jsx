@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollDatePicker from './ScrollDatePicker.jsx';
 
 const MAKINE_LIST = [
   'Dikiş Makinesi',
@@ -110,7 +111,7 @@ const MachineModal = ({ open, onClose, onAdd, machine, onDelete, onUpdate }) => 
           <div className="flex gap-2">
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">Bakım Tarihi</label>
-              <input type="date" name="maintenance_date" value={form.maintenance_date} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
+              <ScrollDatePicker name="maintenance_date" value={form.maintenance_date} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
             </div>
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">Bakım Periyodu (Ay)</label>
@@ -119,7 +120,7 @@ const MachineModal = ({ open, onClose, onAdd, machine, onDelete, onUpdate }) => 
           </div>
           <div className="w-full">
             <label className="block text-xs text-gray-500 mb-1">Bakım Geçerlilik Tarihi</label>
-            <input type="date" name="maintenance_validity_date" value={form.maintenance_validity_date} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
+            <ScrollDatePicker name="maintenance_validity_date" value={form.maintenance_validity_date} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
           </div>
         </form>
         <div className="flex gap-4 mt-6 justify-between items-center">

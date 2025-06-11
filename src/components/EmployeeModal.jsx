@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollDatePicker from './ScrollDatePicker.jsx';
 
 const UNVAN_LIST = [
   'Çalışan', 'Yönetici', 'Müdür', 'Ekip Sorumlusu', 'Usta', 'Kalfa', 'Çırak', 'Diğer'
@@ -110,11 +111,11 @@ const EmployeeModal = ({ open, onClose, onAdd, dangerClass }) => {
           <div className="flex gap-2">
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">Doğum Tarihi</label>
-              <input type="date" name="birth_date" value={form.birth_date} onChange={handleChange} className="w-full px-3 py-2 border rounded-lg" />
+              <ScrollDatePicker name="birth_date" value={form.birth_date} onChange={handleChange} className="w-full px-3 py-2 border rounded-lg" />
             </div>
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">İşe Başlama Tarihi</label>
-              <input type="date" name="start_date" value={form.start_date} onChange={handleChange} className="w-full px-3 py-2 border rounded-lg" />
+              <ScrollDatePicker name="start_date" value={form.start_date} onChange={handleChange} className="w-full px-3 py-2 border rounded-lg" />
             </div>
           </div>
           <select name="gender" value={form.gender} onChange={handleChange} required className="w-full px-3 py-2 border rounded-lg">
@@ -142,22 +143,21 @@ const EmployeeModal = ({ open, onClose, onAdd, dangerClass }) => {
             <div className="flex gap-2">
               <div className="w-1/2">
                 <label className="block text-xs text-gray-500 mb-1">Sağlık Raporu Tarihi</label>
-                <input 
-                  type="date" 
-                  name="health_report" 
-                  value={form.health_report} 
-                  onChange={handleChange} 
-                  className="w-full px-3 py-2 border rounded-lg" 
+                <ScrollDatePicker
+                  name="health_report"
+                  value={form.health_report}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded-lg"
                 />
               </div>
               <div className="w-1/2">
                 <label className="block text-xs text-gray-500 mb-1">Rapor Yenileme Tarihi</label>
-                <input 
-                  type="date" 
-                  name="report_refresh" 
-                  value={form.report_refresh} 
-                  readOnly 
-                  className="w-full px-3 py-2 border rounded-lg bg-gray-100" 
+                <ScrollDatePicker
+                  name="report_refresh"
+                  value={form.report_refresh}
+                  onChange={() => {}}
+                  disabled
+                  className="w-full px-3 py-2 border rounded-lg bg-gray-100"
                 />
               </div>
             </div>

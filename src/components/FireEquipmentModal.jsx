@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollDatePicker from './ScrollDatePicker.jsx';
 
 const FIRE_EQUIPMENT_OPTIONS = [
   'Yangın Tüpü',
@@ -121,8 +122,7 @@ const FireEquipmentModal = ({ open, onClose, onAdd, equipment, onDelete }) => {
           </div>
           <div>
             <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Son Kontrol Tarihi</label>
-            <input
-              type="date"
+            <ScrollDatePicker
               name="last_check_date"
               value={form.last_check_date}
               onChange={handleChange}
