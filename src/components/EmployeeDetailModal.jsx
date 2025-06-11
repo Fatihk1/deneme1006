@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollDatePicker from './ScrollDatePicker.jsx';
 import { supabase } from '../lib/supabaseClient';
 import { addYears } from '../utils';
 
@@ -153,11 +154,11 @@ const EmployeeDetailModal = ({ open, onClose, employee, dangerClass, onUpdate, a
           <div className="flex gap-2">
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">Doğum Tarihi</label>
-              <input type="date" name="birth_date" value={form.birth_date || ''} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
+              <ScrollDatePicker name="birth_date" value={form.birth_date || ''} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
             </div>
             <div className="w-1/2">
               <label className="block text-xs text-gray-500 mb-1">İşe Başlama Tarihi</label>
-              <input type="date" name="start_date" value={form.start_date || ''} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
+              <ScrollDatePicker name="start_date" value={form.start_date || ''} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg" />
             </div>
           </div>
           <select name="gender" value={form.gender || ''} onChange={handleChange} disabled={!edit} className="w-full px-3 py-2 border rounded-lg">
@@ -186,8 +187,7 @@ const EmployeeDetailModal = ({ open, onClose, employee, dangerClass, onUpdate, a
             <div className="flex gap-2">
               <div className="w-1/2">
                 <label className="block text-xs text-gray-500 mb-1">Sağlık Raporu Tarihi</label>
-                <input
-                  type="date"
+                <ScrollDatePicker
                   name="health_report"
                   value={form.health_report || ''}
                   onChange={handleChange}
@@ -197,11 +197,11 @@ const EmployeeDetailModal = ({ open, onClose, employee, dangerClass, onUpdate, a
               </div>
               <div className="w-1/2">
                 <label className="block text-xs text-gray-500 mb-1">Rapor Yenileme Tarihi</label>
-                <input
-                  type="date"
+                <ScrollDatePicker
                   name="report_refresh"
                   value={form.report_refresh || ''}
-                  readOnly
+                  onChange={() => {}}
+                  disabled
                   className="w-full px-3 py-2 border rounded-lg bg-gray-100"
                 />
               </div>

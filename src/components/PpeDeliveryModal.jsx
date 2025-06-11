@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ScrollDatePicker from './ScrollDatePicker.jsx';
 
 const PPE_OPTIONS = [
   'Baret',
@@ -223,8 +224,7 @@ const PpeDeliveryModal = ({ open, onClose, onAdd, delivery, employees, company, 
           </div>
           <div>
             <label className="block text-xs text-gray-500 mb-1">Teslim Tarihi</label>
-            <input
-              type="date"
+            <ScrollDatePicker
               name="delivery_date"
               value={form.delivery_date}
               onChange={handleChange}
