@@ -3,11 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
 import bg2 from '../assets/backgrounds/bg2.jpg';
 
-const userTypeLabels = {
-  employer: 'İşveren veya İşveren Vekili',
-  expert: 'ISG Uzmanı',
-};
-
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const EyeIcon = ({ className }) => (
@@ -135,7 +130,7 @@ const AuthPage = () => {
       setLoading(true);
       setError(null);
 
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
@@ -174,15 +169,12 @@ const AuthPage = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bg2})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md" style={{backdropFilter: 'blur(8px)'}}>
+      <div className="bg-white/30 p-8 rounded-2xl shadow-2xl w-full max-w-md backdrop-blur-lg">
         {error && (
           <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
             {error}
@@ -190,7 +182,7 @@ const AuthPage = () => {
         )}
         {!showRegister ? (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Giriş Yap</h2>
+            <h2 className="text-2xl xs:text-3xl font-bold text-center mb-6">Giriş Yap</h2>
             <form className="space-y-4" onSubmit={handleLogin}>
               <input
                 type="email"
@@ -216,7 +208,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -249,7 +240,7 @@ const AuthPage = () => {
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-center mb-6">Kayıt Ol</h2>
+            <h2 className="text-2xl xs:text-3xl font-bold text-center mb-6">Kayıt Ol</h2>
             <form className="space-y-4" onSubmit={handleRegister} autoComplete="off">
               <div>
                 <label className="block text-gray-700 text-sm font-semibold mb-1">Kullanıcı Tipi</label>
@@ -306,7 +297,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword(true)}
                   onMouseUp={() => setShowPassword(false)}
                   onMouseLeave={() => setShowPassword(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>
@@ -327,7 +317,6 @@ const AuthPage = () => {
                   onMouseDown={() => setShowPassword2(true)}
                   onMouseUp={() => setShowPassword2(false)}
                   onMouseLeave={() => setShowPassword2(false)}
-                  style={{ background: 'none', boxShadow: 'none', outline: 'none', border: 'none' }}
                 >
                   <EyeIcon />
                 </button>

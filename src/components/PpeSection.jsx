@@ -6,7 +6,7 @@ import { supabase } from '../lib/supabaseClient';
 
 const PpeSection = ({ companyId, company }) => {
   const { ppeDeliveries, fetchPpeDeliveries, loading } = usePpeDeliveries(companyId);
-  const { employees, fetchEmployees } = useEmployees(companyId);
+  const { employees } = useEmployees(companyId);
   const [showPpeModal, setShowPpeModal] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState(null);
 
@@ -57,9 +57,8 @@ const PpeSection = ({ companyId, company }) => {
   return (
     <>
       <div
-        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-[64px] text-blue-700 font-bold text-lg gap-2"
+        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-16 text-blue-700 font-bold text-lg gap-2"
         onClick={() => setShowPpeModal(true)}
-        style={{ minHeight: 64 }}
       >
         <span className="text-2xl mr-2">+</span> KKD Teslim Ekle
       </div>

@@ -26,11 +26,15 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
     setLoading(false);
   };
 
+  // fetchEmployees is defined inside the component so we intentionally
+  // exclude it from the dependency array to avoid re-fetching on every render
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (companyId) {
       fetchEmployees();
     }
   }, [companyId]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const handleAddEmployee = async form => {
     setShowEmployeeModal(false);
@@ -86,20 +90,14 @@ const EmployeeSection = ({ companyId, dangerClass }) => {
     fetchEmployees();
   };
 
-  const handleDeleteEmployee = async employee => {
-    if (!employee?.id) return;
-    await supabase.from('employees').delete().eq('id', employee.id);
-    fetchEmployees();
-  };
 
   if (loading) return <div className="text-gray-500">Yükleniyor...</div>;
 
   return (
     <>
       <div
-        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-[64px] text-blue-700 font-bold text-lg gap-2"
+        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-blue-400 bg-blue-50 hover:bg-blue-100 transition min-h-16 text-blue-700 font-bold text-lg gap-2"
         onClick={() => setShowEmployeeModal(true)}
-        style={{ minHeight: 64 }}
       >
         <span className="text-2xl mr-2">+</span> Çalışan Ekle
       </div>

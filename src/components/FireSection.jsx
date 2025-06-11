@@ -49,9 +49,8 @@ const FireSection = ({ companyId }) => {
   return (
     <>
       <div
-        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-orange-400 bg-orange-50 hover:bg-orange-100 transition min-h-[64px] text-orange-700 font-bold text-lg gap-2"
+        className="w-full mb-4 flex items-center justify-center cursor-pointer rounded-xl border-2 border-dashed border-orange-400 bg-orange-50 hover:bg-orange-100 transition min-h-16 text-orange-700 font-bold text-lg gap-2"
         onClick={() => setShowFireModal(true)}
-        style={{ minHeight: 64 }}
       >
         <span className="text-2xl mr-2">+</span> Ekipman Ekle
       </div>

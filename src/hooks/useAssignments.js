@@ -7,12 +7,16 @@ const useAssignments = (companyId) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // fetchAssignments and fetchEmployees are defined inside this hook so we
+  // suppress the exhaustive-deps rule to avoid recreating them in dependencies
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (companyId) {
       fetchAssignments();
       fetchEmployees();
     }
   }, [companyId]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const fetchAssignments = async () => {
     try {

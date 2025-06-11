@@ -61,14 +61,14 @@ const CompanyDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-6">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-          <h1 className="text-2xl font-bold mb-4">{company.name}</h1>
+          <h1 className="text-2xl xs:text-3xl font-bold mb-4">{company.name}</h1>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="text-gray-600">Tehlike Sınıfı: {company.danger_class}</p>
+              <p className="text-gray-600 text-sm xs:text-base">Tehlike Sınıfı: {company.danger_class}</p>
             </div>
             <div>
-              <p className="text-gray-600">Telefon: {company.phone}</p>
-              <p className="text-gray-600">Email: {company.email}</p>
+              <p className="text-gray-600 text-sm xs:text-base">Telefon: {company.phone}</p>
+              <p className="text-gray-600 text-sm xs:text-base">Email: {company.email}</p>
             </div>
           </div>
         </div>
