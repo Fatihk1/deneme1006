@@ -42,14 +42,20 @@ const CompanyDetail = () => {
 
   useEffect(() => {
     const fetchCounts = async () => {
-      const newCounts = {};
-      for (const cat of categories) {
+      const promises = categories.map(async (cat) => {
         const { count } = await supabase
           .from(tableMap[cat.key])
           .select('*', { count: 'exact', head: true })
           .eq('company_id', id);
-        newCounts[cat.key] = count || 0;
-      }
+        return { key: cat.key, count: count || 0 };
+      });
+
+      const results = await Promise.all(promises);
+      const newCounts = {};
+      results.forEach((res) => {
+        newCounts[res.key] = res.count;
+      });
+
       setCounts(newCounts);
     };
     if (id) fetchCounts();
